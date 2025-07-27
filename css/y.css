@@ -1,0 +1,44 @@
+.container{
+margin: 40px auto;
+width: 200px;
+box-sizing: border-box;
+perspective: 400px;
+
+}
+.thecard{
+    position:absolute;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transition:all 2s ease;
+
+}
+.thecard:hover{
+    transform: rotatey( -180deg);
+  
+}
+
+.thefront{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+position: absolute;
+align-items: center;
+background-color: aqua;
+
+}
+.theback{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+position: absolute;
+align-items: center;
+backface-visibility: hidden;
+background-color: rgb(191, 255, 0);
+transform: rotatey(-180deg);
+
+}
+
+

@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cofee</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+         *{
+            box-sizing : border-box;
+            margin:0;
+            padding: 0;
+            font-family: "Roboto", serif;
+        }
+        :root{
+            --main-color : #d3ad7f;
+            --black: #13131a;
+            --bg : #010103;
+            --border : 1px solid #d3ad7f;
+        }
+        body{
+            background: var(--bg);
+           max-width: 100vw;
+           font-family: "Roboto", serif;
+        }
+        .header img{
+            width:180px;
+           
+        }
+        .header{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            /* margin-top: -20px; */
+            height: 80px;
+            border-bottom: var(--border);
+            overflow: hidden;
+        }
+        li {
+    list-style : none ; 
+    display : inline-block ; 
+    padding : 0px 20px ;
+}
+
+nav li a {
+text-decoration : none;
+padding: 5px 0px;
+transition: .5s;
+font-size: 1.01rem;
+color: #fff;
+}
+nav li a:hover{
+    border-bottom : 1px solid #f1eaea; 
+    color: var(--main-color);
+} 
+.header .icons i{
+color: #fff;
+cursor: pointer;
+font-size: 1.3rem;
+margin-left: 30px;
+}
+.icons .fa-bars{
+    display: none;
+}
+ i:hover{
+    color: var(--main-color);
+}
+.search-form{
+    position: absolute;
+    top:16%;
+    /* margin-top: 3px; */
+    right : 30%;
+    background-color: #fff;
+    width:27rem ; 
+    height: 2rem ;
+    outline: none;
+display: flex;
+align-items: center;
+transform: scale(0);
+transition: .5s;
+/* padding: 20px 10px; */
+}
+.search-form.act{
+    transform: scale(1);
+}
+.search-form input{
+    width: 100%;
+    height: 100%;
+    padding: 20px 5px;
+    outline: none;
+    border: none;
+    color: var(--black);
+}
+.search-form label{
+    cursor: pointer;
+   position: absolute;
+   right: 3%;
+   top:25%;
+    color: var(--black);
+}
+.cart-item-container{
+    position: absolute;
+    right: 0%;
+    top:15%;
+    width: 25%;
+    height: 90%;
+    margin-top: -15px;
+    background-color: #ffffff;
+    padding: 15px;
+ display: none;
+
+}
+
+.contentt img:hover{
+    transform: scaleX(1.5);
+    transition: 1s;
+}
+.cart-item-container img {
+    width: 145px;
+    border-radius: 10px;
+}
+.cart-item-container .cart-item{
+    position :relative;
+    margin: 2px 0 ;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.cart-item-container .cart-item i{
+    font-size: 18px;
+    color: var(--black);
+    top:5px;
+    position: absolute;
+    right: 5%;
+  /* transform: translateX(-100%); */
+    cursor: pointer;
+}
+.cart-item-container .cart-item i:hover{
+   color: var(--main-color);
+}
+.cart-item-container .cart-item h3{
+    font-size: 1.2rem;
+    /* padding-bottom: 2px; */
+    color: var(--black);
+}
+.cart-item-container .cart-item .price{
+    font-size: 1rem;
+    color: var(--main-color);
+}
+.btn{
+    padding: 10px 20px;
+    background-color: var(--main-color);
+    text-align: center;
+   /* margin-top: 400px !important; */
+    border-radius: 5px;
+   text-align: center;
+}
+.btn:hover a{
+    letter-spacing: 2px;
+}
+a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+}
+.cart-item-container.act {
+    right: 0%;
+    width: 35%;
+    display: block;
+}
+
+.home{
+    min-height:90vh;
+    display: flex;
+    align-items: center;
+    background-image: url(bg.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: "Roboto", serif;
+}
+section{
+    padding:2rem 7%;
+}
+.conten {
+    max-width: 50%;
+    
+}
+.conten h3{
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+.conten p{
+    font-size: 1rem;
+    font-weight: lighter;
+    color: #fff;
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+.bttn{
+    background-color: var(--main-color);
+    color: #fff;
+    width: 30%;
+    padding: 10px 15px ;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+.heading{
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1.7rem 0;
+    font-size: 2.5rem;
+}
+.heading span{
+    color: var(--main-color);
+}
+.about .row{
+    display: flex;
+    align-items: center;
+   
+    flex-wrap: wrap;
+}
+.about .row .imge{
+    
+    width: 45%;
+   
+    margin-left: 5%;
+}
+.about .row .imge img{
+   width: 100%;
+   max-height: 400px;
+}
+.about .row .contentt{
+   width: 45%;
+   height: 400px; 
+    padding:1.1rem;
+    margin-right: 5%;
+    background-color: var(--black);
+}
+.about .row .contentt h3{
+    font-size: 1.3rem;
+    color: #fff;
+}
+.about .row .contentt p{
+    font-size: 1.2rem;
+    color: #fff;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+.menu .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit ,minmax(20rem , 1fr));
+    gap:1.5rem;
+}
+.menu .box-container .box{
+    padding: 2rem;
+    text-align: center;
+    border:var(--border)
+}
+.menu .box-container .box img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+.menu .box-container .box h3 , .prics  {
+    color: #fff;
+    margin-bottom: 10px;
+}
+.menu .box-container .box .prics  {
+    
+    margin-bottom: 20px;
+}
+.menu .box-container .box .prics span {
+    text-decoration: line-through;
+}
+.menu .box-container .box .botn{
+  
+   margin-top: 100px !important;
+   background: var(--main-color);
+   border-radius: 20px;
+   padding: 10px;
+}
+.menu .box-container .box:hover{
+    background-color: #fff;
+}
+.menu .box-container .box:hover > *{
+  color: var(--black);
+}
+ .products .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit ,minmax(20rem , 1fr));
+    gap:1.5rem;
+ }
+ .products .box-container .box{
+    text-align: center;
+    border: var(--border);
+    padding: 2rem;
+ }
+ .products .box-container .box img{
+    width: 300px;
+    height: 300px;
+ }
+
+ .products .box-container .box .icons i{
+    border:1px solid #272626;
+    padding: 7px;
+    color: #fff;
+ }
+
+ .products .box-container .box .icons i:hover{
+    background-color: var(--main-color);
+ }
+ .products .box-container .box .stars i{
+    color: #fff;
+    margin-top:3px ;
+    color: var(--main-color);
+ }
+ .pro-content , .price{
+    color: #fff;
+    margin-top:5px ;
+ }
+ .products .box-container .box span{
+    text-decoration: line-through;
+    font-weight: lighter;
+ }
+ .review .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit ,minmax(20rem , 1fr));
+    gap:1.5rem;
+ }
+ .review .box-container .box{
+    border: var(--border);
+    text-align: center;
+    padding:  1rem;
+ }
+ .review .box-container .box p {
+    font-size: .8rem;
+    line-height: 1.8;
+    color: #ccc;
+    padding: 1rem 0 ;
+ }
+ .review .box-container .box .user{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+ }
+ .review .box-container .box  h3{
+padding: 1rem 0;
+font-size: 1.5rem;
+color: #fff;
+ }
+ .review .box-container .box .stars i{
+font-size: 1rem;
+color: var(--main-color);
+ }
+ .contact .row{
+    display:flex;
+    align-items: center;
+    background: var(--black);
+    flex-wrap: wrap;
+    /* gap: 1rem; */
+ }
+ 
+ .contact .row form{
+    padding: 2rem 7rem;
+    text-align: center;
+ }
+ .contact .row form h3{
+    text-transform: uppercase;
+    font-size: 2rem;
+    color:#fff;
+ }
+ .contact .row form .inputBox{
+    display: flex;
+ align-items: center;
+ margin-top: 2rem;
+ margin-bottom: 2rem;
+ background: var(--bg);
+ border: var(--border);
+ }
+ .contact .row form .inputBox span{
+    color: #fff;
+    font-size: 1.3rem;
+    padding-left: 1.5rem;
+ }
+ .contact .row form .inputBox input{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: #fff;
+   border: none;
+    background: none;
+    margin-left: .5rem;
+ }
+ .submit{
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: .2s;
+ }
+ .submit:hover{
+    transform: scaleX(1.1);
+ }
+ .blogs .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit ,minmax(20rem , 1fr));
+    gap:1.5rem;
+ }
+ .blogs .box-container .box{
+    border: var(--border);
+ }
+ .blogs .box-container .box .image{
+   height: 16rem;
+   overflow: hidden;
+   width: 100%;
+ }
+ .blogs .box-container .box .image img{
+   height: 100%;
+   object-fit: cover;
+   width: 100%;
+   transition: .3s;
+ }
+ .blogs .box-container .box:hover .image img{
+    transform: scale(1.1);
+ }
+ .blogs .box-container .box .content{
+    padding: 1.5rem;
+
+ }
+ .blogs .box-container .box .title{
+    font-size: 1.5rem;
+    line-height: 1; 
+    color: #fff;
+ }
+ .blogs .box-container .box .title:hover{
+    color: var(--main-color);
+ }
+ .blogs .box-container .box .content span{
+    color: var(--main-color);
+    display: block;
+    padding-top: .7rem;
+    font-size: 1rem;
+ }
+ .blogs .box-container .box .content p{
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ccc;
+    padding: 1rem 0;
+ }
+ .footer{
+    background: var(--black);
+    text-align: center;
+ }
+ .footer .shar{
+    padding: 1rem 0;
+ }
+ .footer .shar a{
+   height: 2rem;
+   width: 2rem;
+   line-height: 2rem;
+   font-size: 1rem;
+   border: var(--border);
+   margin: .3rem;
+   border-radius: 50%;
+ }
+ .footer .shar a:hover{
+    background-color: var(--main-color);
+ }
+ .footer .links{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1.2rem 0;
+    gap: 1rem;
+ }
+ .footer .links a{
+    padding: .2rem 1rem;
+    color: #fff;
+    border: var(--border);
+ }
+ .footer .links a:hover{
+    background: var(--main-color);
+ }
+ .footer .credit{
+    font-size: 1rem;
+    color: #fff;
+    font-weight: lighter;
+    padding: .5rem;
+ }
+ .footer .credit span{
+    color: var(--main-color);
+ }
+@media (max-width:850px) {
+    .cart-item-container.act {
+    width: 50% !important;
+   
+}
+}
+
+@media (max-width:991px) {
+    .cart-item-container.act {
+    width: 40%;
+    height: 90%;
+    margin-top: -15px;
+}
+   
+}
+
+
+@media (max-width:1250px) {
+    .icons .fa-bars{
+    display: inline-block;
+   
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px;
+}
+
+
+
+
+.header .nav{
+    position: absolute;
+    top:13%;
+   height: 100%;
+    left: -100%;
+    width:20rem;
+    background-color: #fff;
+   
+}
+.header .nav li{
+    display: block;
+    padding: 15px;
+   
+}
+.header .nav li a{
+    color: var(--black);
+    font-size: 20px;
+    font-weight: 600;
+}
+.header .nav.active{
+    transition: .5s;
+   left: 0;
+}
+
+section{
+    padding:2rem ;
+}
+.search-form.act{
+  right: 1%;
+
+}
+.home{
+    background-position: center;
+    justify-content: center;
+}
+.conten h3{
+    font-size: 2rem;
+}
+.bttn{
+    width: 40%;
+}
+.conten{
+    margin-left: -330px;
+}
+}
+@media (max-width:1110px) {
+    .bttn{
+    width: 60%;
+}
+
+
+.about .row .imge img{
+   height: 315px;
+}
+.about .row .contentt{
+   /* width:calc(80vw) ; */
+    padding:.4rem;
+    height: 320px;
+   
+}
+.about .row .contentt h3{
+    font-size: 1rem;
+    color: #fff;
+}
+.about .row .contentt p{
+    font-size: 1rem;
+    color: #fff;
+    padding: 1rem 0;
+    line-height: 1;
+}
+
+}   
+
+
+
+@media (max-width:650px) {
+    .search-form.act{
+  right: 1%;
+ width: 75%;
+ margin-top: 3px;
+ align-items: center;
+    }
+    .cart-item-container.act {
+    width: 80% !important;
+    height: 90%;
+}
+    .cart-item-container img {
+    width: 100px;
+    border-radius: 10px;
+}
+.cart-item-container .cart-item h3{
+    font-size: 16px;
+    /* padding-bottom: 2px; */
+    margin:0 ;
+    color: var(--black);
+}
+.cart-item-container .cart-item .price{
+    font-size: .5rem;
+    margin:0 ;
+    color: var(--main-color);
+}
+.cart-item-container{
+   max-height:  100%;
+    width: 100% ;
+}
+.home{
+    background-position: center;
+    justify-content: center;
+}
+.content h3{
+    font-size: 1.5rem; 
+    margin-top: -60px; 
+}
+.bttn{
+    width: 90%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.content p{
+    font-size: 1.2rem;
+    line-height: 1.5;
+    padding: .5rem 0;
+}
+.about .row{
+   display: flex;
+   justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+   
+}
+
+.conten{
+    margin-left: -150px;
+}
+
+.about .row .imge img{
+   width: 100%;
+}
+.about .row .contentt{
+   width:100% ;
+    padding:2rem;
+    margin-right: 0;
+    background-color: var(--black);
+   justify-content: center;
+   display: flex;
+flex-direction: column;
+}
+.about .row .contentt h3{
+    font-size: 1rem;
+    color: #fff;
+}
+.about .row .contentt p{
+    font-size: 1rem;
+    color: #fff;
+    padding: 1rem 0;
+    line-height: 1.3;
+}
+
+.about .row .imge{
+    margin-left: 0;
+    width: 100%;
+}
+}
+    </style>
+</head>
+<body>
+    <!-- header start -->
+    <header class="header">
+        <a href="" class="logo"><img src="cofee_logo.png"></a>
+        <nav class="nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#home">Review</a></li>
+                <li><a href="#home">Contacts</a></li>
+                <li><a href="#home">Blogs</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <i class="fa-solid fa-magnifying-glass" id="searchicon"></i>
+            <i class="fa-solid fa-cart-shopping" id="cart"></i>
+            <i class="fa-solid fa-bars " id="fa-bars"></i>
+        </div>
+        <div class="search-form">
+            <input type="search" id="search" id="search-box" placeholder="search here...">
+            <label for="search-box"><i class="fa-solid fa-magnifying-glass"></i></label>
+            
+        </div>
+
+    </header>
+    <div class="cart-item-container">
+       
+         <div class="cart-item">
+            <img src="cart7.png">
+            <div class="content">
+                <h3>Cart Item 01</h3>
+                <p class="price">$199</p>
+                
+            </div>
+            <i class="fa-regular fa-circle-xmark"></i>
+        </div>
+        <div class="cart-item">
+            <img src="cart3.webp">
+           
+            <div class="content">
+                <h3>Cart Item 02</h3>
+                <p class="price">$149</p>
+                
+            </div>
+            <i class="fa-regular fa-circle-xmark"></i>
+        </div>
+        <div class="cart-item">
+            <img src="cart5.jpg">
+          
+            <div class="content">
+                <h3>Cart Item 03</h3>
+                <p class="price">$199</p>
+                
+            </div>
+            <i class="fa-regular fa-circle-xmark"></i>
+        </div>
+        <div class="cart-item">
+            <img src="cart6.jpg">
+            <div class="content">
+                <h3>Cart Item 04</h3>
+                <p class="price">$199</p>
+            </div>
+            <i class="fa-regular fa-circle-xmark"></i>
+        </div>
+        <div class="btn"><a href="#">checkout now</a></div>
+    </div>
+    <!-- header end -->
+     <!-- start home -->
+      <section class="home" id="home">
+        <div class="conten">
+            <h3>Fresh Coffee in the Mornning</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium deserunt ipsum accusamus fugiat fugit in.</p>
+            <div class="bttn"><span>Get yours now</span></div>
+        </div>
+      </section>
+      <!--end home -->
+      <!-- about start -->
+       <div class="about" id="about">
+        <h1 class="heading"><span>about</span> us</h1>
+        <div class="row">
+            <div class="imge">
+                <img src="cup.avif" alt="">
+            </div>
+            <div class="contentt">
+                <h3>what makes our coffee spcial?</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque repellendus tempora quae. Earum repellendus soluta, a tempora aut saepe dignissimos eos sit dolorem quas vitae vel, modi molestias veritatis enim!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, assumenda aut dolores, cum dolorum, molestiae quidem esse vitae temporibus il</p>
+                <a href="" class="btn botn">Learn more</a>
+            </div>
+        </div>
+       </div>
+       <!-- about end -->
+<!-- menu start -->
+ <section class="menu" id="menu">
+ <h1 class="heading">our <span>menu</span></h1>
+ <div class="box-container">
+    <div class="box">
+        <img src="cup1.jpg" alt="">
+        <h3>tasty and healthy</h3>
+        <div class="prics">$167 <span>20.99</span></div>
+        <a href="" class="botn">add to cart</a>
+    </div>
+
+ 
+
+    <div class="box">
+        <img src="cup2.jpg" alt="">
+        <h3>tasty and healthy</h3>
+        <div class="prics">$167 <span>20.99</span></div>
+        <a href="" class="botn">add to cart</a>
+    </div>
+
+ 
+
+    <div class="box">
+        <img src="cup3.jpg" alt="">
+        <h3>tasty and healthy</h3>
+        <div class="prics">$167 <span>20.99</span></div>
+        <a href="" class="botn">add to cart</a>
+    </div>
+
+
+ 
+    <div class="box">
+        <img src="cup4.jpg" alt="">
+        <h3>tasty and healthy</h3>
+        <div class="prics">$167 <span>20.99</span></div>
+        <a href="" class="botn">add to cart</a>
+    </div>
+
+ 
+    <div class="box">
+        <img src="cup9.jpg" alt="">
+        <h3>tasty and healthy</h3>
+        <div class="prics">$167 <span>20.99</span></div>
+        <a href="" class="botn">add to cart</a>
+    </div>
+    <div class="box">
+        <img src="cup8.jpg" alt="">
+        <h3>tasty and healthy</h3>
+        <div class="prics">$167 <span>20.99</span></div>
+        <a href="" class="botn">add to cart</a>
+    </div>
+</div>
+</section>
+ <!-- menu end -->
+  <!-- stert pruduvts -->
+   <section class="products" id="products">
+    <h1 class="heading">our <span>Products</span></h1>
+    <div class="box-container">
+        <div class="box">
+            <div class="icons">
+                <i class="fa-solid fa-cart-shopping" id="cart"></i>
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-eye"></i>
+                </div>
+       <div class="image">
+        <img src="package2.png" alt="">
+       </div>
+       <div class="pro-content">
+        <h3>fresh coffee</h3>
+       </div>
+       <div class="stars">
+        <i class="fa-regular fa-star"></i> 
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star-half-alt"></i>
+            </div>
+            <div class="price">19$ <span>20$</span></div>
+    </div>
+    <div class="box">
+        <div class="icons">
+            <i class="fa-solid fa-cart-shopping" id="cart"></i>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-regular fa-eye"></i>
+            </div>
+   <div class="image">
+    <img src="package5.png" alt="">
+   </div>
+   <div class="pro-content">
+    <h3>fresh coffee</h3>
+   </div>
+   <div class="stars">
+    <i class="fa-regular fa-star"></i> 
+    <i class="fa-regular fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+    <i class="fa-regular fa-star-half-alt"></i>
+        </div>
+        <div class="price">19$ <span>20$</span></div>
+    </div>
+<div class="box">
+    <div class="icons">
+        <i class="fa-solid fa-cart-shopping" id="cart"></i>
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-regular fa-eye"></i>
+    </div>
+<div class="image">
+<img src="package3.png" alt="">
+</div>
+<div class="pro-content">
+<h3>fresh coffee</h3>
+</div>
+<div class="stars">
+<i class="fa-regular fa-star"></i> 
+<i class="fa-regular fa-star"></i>
+<i class="fa-regular fa-star"></i>
+<i class="fa-regular fa-star"></i>
+<i class="fa-regular fa-star-half-alt"></i>
+    </div>
+    <div class="price">19$ <span>20$</span></div>
+</div>
+
+</div>
+
+   </section>
+    <!-- end pruducts -->
+     <!-- review section start -->
+      <section class="review" id="review">
+       <h1 class="heading">Customer's <span>review</span></h1>
+       <div class="box-container">
+        <div class="box">
+            <img src="" alt="" class="qoute">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam quae doloribus quia itaque qui nesciunt nam obcaecati, 
+                architecto ipsam ex illum dolorem iusto aliquam voluptatibus. Iure vel illum incidunt aliquam.</p>
+                <img src="buisinessMan1.jpg" alt="" class="user">
+                <h3>john doe </h3>
+                <div class="stars">
+                    <i class="fa-regular fa-star"></i> 
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star-half-alt"></i>
+                </div>
+        </div>
+        <div class="box">
+            <img src="" alt="" class="qoute">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam quae doloribus quia itaque qui nesciunt nam obcaecati, 
+                architecto ipsam ex illum dolorem iusto aliquam voluptatibus. Iure vel illum incidunt aliquam.</p>
+                <img src="buisinessMan2.jpg" alt="" class="user">
+                <h3>john doe </h3>
+                <div class="stars">
+                    <i class="fa-regular fa-star"></i> 
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star-half-alt"></i>
+                </div>
+        </div>
+        <div class="box">
+            <img src="" alt="" class="qoute">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam quae doloribus quia itaque qui nesciunt nam obcaecati, 
+                architecto ipsam ex illum dolorem iusto aliquam voluptatibus. Iure vel illum incidunt aliquam.</p>
+                <img src="buisinessMan3.jpg" alt="" class="user">
+                <h3>john doe </h3>
+                <div class="stars">
+                    <i class="fa-regular fa-star"></i> 
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star-half-alt"></i>
+                </div>
+        </div>
+       </div>
+      </section>
+      <!-- review section end -->
+       <!-- contact  section srart -->
+        <section class="contact" id="contact">
+            <h1 class="heading"> <span>Contact</span> Us</h1>
+            <div class="row">
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.
+                61185000713!2d31.340866840329504!3d30.059611343733494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13
+                .1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!
+                2z2KfZhNmC2KfZh9ix2KnYjCDZhdit2KfZgdi42Kkg2KfZhNmC2KfZh9ix2KnigKw!5e0!3m2!
+                1sar!2seg!4v1743186508170!5m2!1sar!2seg" width="600" height="450" style="border:0;"
+                 allowfullscreen="" loading="lazy" >
+                </iframe>
+                <form action="">
+                    <h3>grt in touch</h3>
+                    <div class="inputBox">
+                        <span class="fas fa-user"></span>
+                        <input type="text" placeholder="name...">
+                    </div>
+                    <div class="inputBox">
+                        <span class="fas far fa-envelope"></span>
+                        <input type="email" placeholder="email">
+                    </div>
+                    <div class="inputBox">
+                        <span class="fas fa-phone"></span>
+                        <input type="number" placeholder="number">
+                    </div>
+                    <input type="submit" value="contact now" class="btn botn submit">
+                </form>
+            </div>
+        </section>
+        <!-- contact  section end -->
+        <!-- blogs  section start -->
+         <section class="blogs" id="blogs">
+            <h1 class="heading"> our <span>blogs</span></h1>
+            <div class="box-container">
+                <div class="box">
+                    <div class="image">
+                        <img src="cup1.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <a href="" class="title">tasty and refreshing cofee</a>
+                        <span>by admin / 21st may, 2021</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, in.</p>
+                        <a href="#" class="btn">read more</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="cup.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <a href="" class="title">tasty and refreshing cofee</a>
+                        <span>by admin / 21st may, 2021</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, in.</p>
+                        <a href="#" class="btn">read more</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="image">
+                        <img src="cup4.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <a href="" class="title">tasty and refreshing cofee</a>
+                        <span>by admin / 21st may, 2021</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, in.</p>
+                        <a href="#" class="btn submit">read more</a>
+                    </div>
+                </div>
+            </div>
+         </section>
+         <!-- blogs  section end -->
+          <!-- footer  section start -->
+           <section class="footer">
+            <div class="shar">
+                <a href="#" class="fas fab fa-facebook"></a>
+                <a href="#" class="fas fab fab fa-twitter"></a>
+                <a href="#" class="fas fab fab fa-linkedin"></a>
+                <a href="#" class="fas fab fab fa-instagram"></a>
+                <a href="#" class="fas fab fab fa-pinterest"></a>
+            </div>
+            <div class="links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Menu</a>
+            <a href="#">Products</a>
+            <a href="#">Review</a>
+            <a href="#">Contacts</a>
+            <a href="#">Blogs</a>
+            </div>
+            <div class="credit">created by <span>Eng.Rahma Touni</span> | all rights reserved</div>
+           </section>
+            <!-- footer  section end -->
+     <script src="script.js"></script>
+</body>
+</html>
